@@ -1,21 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-   <Button
-       android:id="@+id/btn_drag"
-       android:layout_marginTop="32dp"
-       android:layout_width="match_parent"
-       android:text="简单拖拽Demo"
-       android:layout_height="56dp"/>
-
-    <Button
-        android:id="@+id/btn_channl"
+    <FrameLayout
+        android:id="@+id/fl_content"
         android:layout_width="match_parent"
-        android:text="排序增删Demo"
-        android:layout_marginTop="16dp"
-        android:layout_height="56dp"/>
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#F7F7F8"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingTop="3dp" >
+
+        <RadioButton
+            android:id="@+id/radioNews"
+            style="@style/radioStyle"
+            android:drawableTop="@drawable/selector_button_news"
+            android:text="资讯" />
+
+        <RadioButton
+            android:id="@+id/radioLearn"
+            style="@style/radioStyle"
+            android:drawableTop="@drawable/selector_button_learn"
+            android:text="培训" />
+
+        <!-- <RadioButton
+            android:id="@+id/radioFind"
+            style="@style/radioStyle"
+            android:drawableTop="@drawable/selector_button_find"
+            android:text="发现" /> -->
+
+        <RadioButton
+            android:id="@+id/radioMy"
+            style="@style/radioStyle"
+            android:drawableTop="@drawable/selector_button_my"
+            android:text="我的" />
+    </RadioGroup>
+
 </LinearLayout>

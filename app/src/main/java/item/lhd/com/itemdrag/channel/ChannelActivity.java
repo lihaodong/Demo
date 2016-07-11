@@ -8,12 +8,9 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import item.lhd.com.itemdrag.R;
 import item.lhd.com.itemdrag.adapter.ChannelAdapter;
-import item.lhd.com.itemdrag.bean.ChannelEntity;
+import item.lhd.com.itemdrag.fragment.MedicalInfoFragment;
 import item.lhd.com.itemdrag.utils.ItemDragHelperCallback;
 
 
@@ -35,18 +32,6 @@ public class ChannelActivity extends AppCompatActivity {
     }
 
     private void init() {
-        final List<ChannelEntity> items = new ArrayList<>();
-        for (int i = 0; i < 18; i++) {
-            ChannelEntity entity = new ChannelEntity();
-            entity.setName("频道" + i);
-            items.add(entity);
-        }
-        final List<ChannelEntity> otherItems = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            ChannelEntity entity = new ChannelEntity();
-            entity.setName("其他" + i);
-            otherItems.add(entity);
-        }
 
         GridLayoutManager manager = new GridLayoutManager(this, 4);
         mRecy.setLayoutManager(manager);
@@ -55,7 +40,7 @@ public class ChannelActivity extends AppCompatActivity {
         final ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(mRecy);
 
-        final ChannelAdapter adapter = new ChannelAdapter(this, helper, items, otherItems);
+        final ChannelAdapter adapter = new ChannelAdapter(this, helper, MedicalInfoFragment.items, MedicalInfoFragment.otherItems);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
@@ -68,7 +53,7 @@ public class ChannelActivity extends AppCompatActivity {
         adapter.setOnMyChannelItemClickListener(new ChannelAdapter.OnMyChannelItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Toast.makeText(ChannelActivity.this, items.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ChannelActivity.this, MedicalInfoFragment.items.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }

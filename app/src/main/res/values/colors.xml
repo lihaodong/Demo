@@ -6,4 +6,10 @@
     <color name="tip">#9c9c9c</color>
     <color name="bg_focus">#DDDDDD</color>
     <color name="red_500">#ef4836</color>
+    <color name="subscribe_item_selected_stroke">#ffcc3131</color>
+    <color name="subscribe_item_text_color_pressed">#ffb9b9b9</color>
+    <item name="subscribe_item_text_color_normal" type="color">@color/default_text</item>
+    <color name="default_text">#ff454545</color>
+    <!-- 褐色 -->
+    <color name="brownness">#938876</color>
 </resources>
