@@ -27,9 +27,11 @@ public class NewsFragmentPagerAdapter extends FragmentStatePagerAdapter {
 		super(fm);
 		this.fm = fm;
 		NewsFragment newInstance = null;
-		for (ChannelEntity itme : categorys) {
+		for (ChannelEntity item : categorys) {
 			newInstance = new NewsFragment();
 			Bundle args = new Bundle();
+			args.putString("content",item.getName());
+			newInstance.setArguments(args);
 			fragments.add(newInstance);
 		}
 	}

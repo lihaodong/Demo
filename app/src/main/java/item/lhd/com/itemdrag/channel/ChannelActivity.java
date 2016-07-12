@@ -40,7 +40,7 @@ public class ChannelActivity extends AppCompatActivity {
         final ItemTouchHelper helper = new ItemTouchHelper(callback);
         helper.attachToRecyclerView(mRecy);
 
-        final ChannelAdapter adapter = new ChannelAdapter(this, helper, MedicalInfoFragment.items, MedicalInfoFragment.otherItems);
+        final ChannelAdapter adapter = new ChannelAdapter(null,this, helper, MedicalInfoFragment.items, MedicalInfoFragment.otherItems);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {

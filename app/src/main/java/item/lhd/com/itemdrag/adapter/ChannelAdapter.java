@@ -21,6 +21,7 @@ import java.util.List;
 
 import item.lhd.com.itemdrag.R;
 import item.lhd.com.itemdrag.bean.ChannelEntity;
+import item.lhd.com.itemdrag.fragment.MedicalInfoFragment;
 import item.lhd.com.itemdrag.listener.OnDragVHListener;
 import item.lhd.com.itemdrag.listener.OnItemMoveListener;
 
@@ -62,11 +63,12 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     // 我的频道点击事件
     private OnMyChannelItemClickListener mChannelItemClickListener;
 
-    public ChannelAdapter(Context context, ItemTouchHelper helper, List<ChannelEntity> mMyChannelItems, List<ChannelEntity> mOtherChannelItems) {
+    public ChannelAdapter(MedicalInfoFragment fragment,Context context, ItemTouchHelper helper, List<ChannelEntity> mMyChannelItems, List<ChannelEntity> mOtherChannelItems) {
         this.mInflater = LayoutInflater.from(context);
         this.mItemTouchHelper = helper;
         this.mMyChannelItems = mMyChannelItems;
         this.mOtherChannelItems = mOtherChannelItems;
+        fragment.setPopwindowShow();
     }
 
     @Override
@@ -552,5 +554,8 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
             tvBtnEdit = (TextView) itemView.findViewById(R.id.tv_btn_edit);
         }
+    }
+    public interface MyItemListener{
+        public void setPopwindowShow();
     }
 }
